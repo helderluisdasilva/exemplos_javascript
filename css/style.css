@@ -5,7 +5,8 @@
 body{background-color:#AAA; font-family: Roboto, "Trebuchet MS", Verdana, Geneva, Tahoma, sans-serif;}
 header{width:100%; height:100px; text-align:center; color:white; background-color:#444; padding-top:30px; font-variant: small-caps; box-shadow:0px 5px 5px #00000033; border-bottom:2px solid #222;}
 main{width:90vw; max-width:980px; min-height:800px; background-color:#FFF; padding:2%; border-radius:5px; margin:20px auto; box-shadow:0px 5px 5px #00000033;}
-main > h1{font-variant: small-caps; color:#333; padding-bottom:5px; border-bottom:2px dotted #333; margin-bottom:20px;}
+main > h1:first-child{margin-top:0;}
+main > h1{font-variant: small-caps; color:#333; padding-bottom:5px; border-bottom:2px dotted #333; margin:20px 0;}
 main > p{margin:20px 0; text-indent: 20px; text-justify:justify;}
 main > table{width:100%; border-collapse: collapse; margin-bottom:30px;}
 main > table > thead > tr > td{background-color:#333; color:white; font-weight: bold; text-align:center; padding:10px; border:1px solid #333;}
