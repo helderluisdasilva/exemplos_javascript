@@ -3,8 +3,13 @@ const inputNumber = document.getElementById("table_number");
 const inputButton = document.getElementById("generate_table");
 const cleanTable = document.getElementById("clean_table");
 const tableContainer = document.getElementById("generated_table_container");
+const celsius = document.getElementById("celsius");
+const fahrenheit = document.getElementById("fahrenheit");
+
 let tableCounter = 0;
 
+
+//EVENTOS
 inputButton.addEventListener("click", function(){
     generateTable(inputNumber.value);
 });
@@ -15,6 +20,16 @@ cleanTable.addEventListener("click", function(){
     tableCounter = 0;
 });
 
+celsius.addEventListener("change", function(){
+    convertTemperature("celsius");
+})
+
+fahrenheit.addEventListener("change", function(){
+    convertTemperature("fahrenheit");
+})
+
+
+//FUNÇÔES
 function generateTable(setNumberParam){
     if(tableCounter < 6){
         let setNumber = setNumberParam;
@@ -31,5 +46,19 @@ function generateTable(setNumberParam){
         tableContainer.appendChild(newTable);
         tableCounter++;
         inputNumber.value++;
+    }
+}
+
+function convertTemperature(alterado){
+    let celsiusAtual = 0;
+    let fahrenheitAtual = 0;
+    if(alterado == "celsius"){
+        celsiusAtual = celsius.value;
+        fahrenheitAtual = (celsiusAtual * (9 / 5)) + 32;
+        fahrenheit.value = fahrenheitAtual;
+    }else if(alterado == "fahrenheit"){
+        fahrenheitAtual = fahrenheit.value;
+        celsiusAtual = (fahrenheitAtual - 32) * (5 / 9);
+        celsius.value = celsiusAtual;
     }
 }
